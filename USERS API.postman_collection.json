@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "2dfca2ef-9032-4b98-a8ad-89c1cc443554",
+		"name": "USERS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://vlad-ubuntu.local:3080/users",
+					"protocol": "http",
+					"host": [
+						"vlad-ubuntu",
+						"local"
+					],
+					"port": "3080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://vlad-ubuntu.local:3080/users",
+					"protocol": "http",
+					"host": [
+						"vlad-ubuntu",
+						"local"
+					],
+					"port": "3080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"familyName\": \"Petrov\",\n    \"givenName\": \"Petro\",\n    \"email\": \"petr1@petrov.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://vlad-ubuntu.local:3080/users",
+					"protocol": "http",
+					"host": [
+						"vlad-ubuntu",
+						"local"
+					],
+					"port": "3080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"familyName\": \"Max\",\n    \"givenName\": \"Musterman\",\n    \"email\": \"max.musterman@company.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://vlad-ubuntu.local:3080/users/1",
+					"protocol": "http",
+					"host": [
+						"vlad-ubuntu",
+						"local"
+					],
+					"port": "3080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"familyName\": \"Max\",\n    \"givenName\": \"Musterman\",\n    \"email\": \"max.musterman@company.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://vlad-ubuntu.local:3080/users/1",
+					"protocol": "http",
+					"host": [
+						"vlad-ubuntu",
+						"local"
+					],
+					"port": "3080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiSmF2aWVyIEF2aWxlcyIsImVtYWlsIjoiYXZpbGVzbG9wZXouamF2aWVyQGdtYWlsLmNvbSJ9.rgOobROftUYSWphkdNfxoN2cgKiqNXd4Km4oz6Ex4ng",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

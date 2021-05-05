@@ -1,0 +1,47 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - mydata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: localpass
+      PGADMIN_DEFAULT_EMAIL: localuser@localhost.localnet
+    ports:
+      - 8888:80
+
+  node:
+    container_name: koa-back
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    ports:
+      - 3080:3000
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+
+volumes:
+  mydata:
